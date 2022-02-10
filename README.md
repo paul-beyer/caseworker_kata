@@ -1,26 +1,37 @@
-# caseworker_kata
-# Use Case:
+# Northwoods Interview Kata
 
-# As a supervisor
-In order to assign client visits
-I need to know which case workers are available from a Caseworker pool
+# Background
+This simulates the task of supervisors assigning workers to varying client visits. 
+## _Supervisor use case:_
 
- Caseworker
-         : Hours available
-	: Has experience levels (junior, experienced, expert)
-	: Can arrive at client no later than 4:00PM
-         : Can leave client no later than 5:30PM
-	: Paperwork 
+> As a supervisor
+> In order to assign workers to client visits
+> I need to know which case workers are available
 
-Case 
-	: Description
-         : 
+## _Caseworker_
+        1. Has work hours
+	2. Has experience level (junior, mid, senior)
+	     - Junior takes full allocated time
+	     - Mid level and senior can do visits in 75% and 50% of junior time, respectively)
 
-Visit (s)
-	: Has urgency (normal, high)
-         : Reason 
-         : Distance (assume caseworkers start from home office)
-         : Arrive no earlier than 4PM
-         : Leave no later than 5:30PM
+## _Supervisor_
 
-         
+    1. Supervises multiple case workers
+    2. Must assign a worker to a client visit
+
+## _Visits_ 
+    1. Has urgency
+        - Normal visits must leave clients no later than 6PM
+        - Urgent visits disregard any time deadlines
+    2. Reason
+        - Check-in 
+            - Takes a half hour plus 15 minutes for paperwork
+            - Pefer junior caseworker first, but send anyone
+        - Abuse investigation 
+             - Takes 2 hours - plus 20 minutes for paperwork
+             - Prefer mid level caseworker first, but send anyone
+        - Intervention 
+            - Takes 3 hours plus 30 minutes for paperwork
+            - Must be senior
+    3. Has travel time (assume from home office)
+    4. All visits other than urgent must end with paperwork completed by 6:00PM
