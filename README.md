@@ -4,9 +4,9 @@
 This simulates the task of supervisors assigning workers to varying client visits. 
 ## _Supervisor use case:_
 
- As a supervisor
- In order to assign workers to client visits
- I need to know which case workers are available
+As a supervisor
+In order to assign workers to client visits
+I need to know which case workers are available
 
 ## _Caseworker_
     1. Has work hours
