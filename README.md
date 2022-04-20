@@ -28,7 +28,7 @@ As a supervisor
             - Takes a half hour plus 15 minutes for paperwork
             - Pefer junior caseworker first, but send anyone
         - Abuse investigation 
-             - Takes 2 hours - plus 20 minutes for paperwork
+             - Takes 2 hours plus 20 minutes for paperwork
              - Prefer mid level caseworker first, but send anyone
         - Intervention 
             - Takes 3 hours plus 30 minutes for paperwork
