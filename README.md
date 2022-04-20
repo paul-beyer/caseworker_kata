@@ -8,14 +8,17 @@ As a supervisor
     In order to assign workers to client visits
         I need to know which case workers are available
 
-## _Caseworker_
+## _Worker
     1. Has work hours
+
+## __CaseWorker_
+
+    1. Is a worker. 
     2. Has experience level (junior, mid, senior)
-	     - Junior takes full allocated time
-	     - Mid level and senior can do visits in 75% and 50% of junior time, respectively)
 
 ## _Supervisor_
 
+    1. Is a worker
     1. Supervises multiple case workers
     2. Must assign a worker to a client visit
 
@@ -35,3 +38,4 @@ As a supervisor
             - Must be senior
     3. Has travel time (assume from home office)
     4. All visits other than urgent must end with paperwork completed by 6:00PM
+    5. Mid and senior Caseworkers can do visits in 75% and 50% of junior time, respectively.
