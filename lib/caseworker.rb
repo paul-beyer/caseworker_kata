@@ -1,4 +1,4 @@
-class CaseWorker
+class CaseWorker < Worker
     attr_accessor :experience
 
     def initialize(args)

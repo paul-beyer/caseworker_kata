@@ -1,4 +1,4 @@
-Superviser < CaseWorker
+class Superviser < Worker
 
     attr_accessor :workers
 
