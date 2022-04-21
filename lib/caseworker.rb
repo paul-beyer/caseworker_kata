@@ -1,3 +1,5 @@
+require_relative '../lib/worker'
+
 class CaseWorker < Worker
     attr_accessor :experience
 
@@ -6,4 +8,4 @@ class CaseWorker < Worker
         super(args)
     end 
 
-end 
+end
