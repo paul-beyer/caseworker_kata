@@ -8,6 +8,11 @@ class Superviser < Worker
         @workers = args[:workers]
         super(args)
     end 
+
+    def assign_caseworker
+        @workers[0]
+    end
+    
 end
 
 
