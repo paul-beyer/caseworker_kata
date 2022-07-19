@@ -1,7 +1,5 @@
-gem 'minitest', '~> 5.4'
-require 'minitest/autorun'
-require 'minitest/pride'
-require_relative 'lib/caseworker'
+
+require 'caseworker'
 
 
 class Caseworker < Minitest::Test

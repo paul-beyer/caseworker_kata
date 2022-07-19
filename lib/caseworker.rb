@@ -1,4 +1,4 @@
-require_relative '../lib/worker'
+require 'worker'
 
 class CaseWorker < Worker
     attr_accessor :experience
