@@ -8,31 +8,28 @@ As a supervisor
     In order to assign workers to client visits
         I need to know which case workers are available
 
-## _Worker
-    1. Has work hours
-
 ## __CaseWorker_
 
-    1. Is a worker. 
-    2. Has experience level (junior, mid, senior)
+    1. Has work hours. 
+    2. Has an experience level (junior, mid, senior)
 
 ## _Supervisor_
 
-    1. Is a worker
-    1. Supervises multiple case workers
-    2. Must assign a worker to a client visit
+    1. Has work hours. 
+    1. Has multiple caseworkers assigned to them
+    2. Must assign a specific worker to a client visit
 
 ## _Visits_ 
     1. Has urgency
         - Normal visits must leave clients no later than 6PM
-        - Urgent visits disregard any time deadlines
+        - Urgent visits disregard any time of day constraints
     2. Reason
         - Check-in 
             - Takes a half hour plus 15 minutes for paperwork
-            - Pefer junior caseworker first, but send anyone
+            - Pefer junior caseworker first, but can send anyone
         - Abuse investigation 
-             - Takes 2 hours plus 20 minutes for paperwork
-             - Prefer mid level caseworker first, but send anyone
+             - Takes 2 hours plus 45 minutes for paperwork
+             - Prefer mid level caseworker first, but can send senior
         - Intervention 
             - Takes 3 hours plus 30 minutes for paperwork
             - Must be senior

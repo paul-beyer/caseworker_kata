@@ -1,9 +1,6 @@
 require 'visit'
 require 'caseworker'
 
-
-
-
 #class VisitTest < Minitest::Test
 #
 #    

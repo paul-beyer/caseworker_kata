@@ -8,4 +8,16 @@ class CaseWorker < Worker
         super(args)
     end 
 
+    def assignable(visit)
+        match_experience_to_visit_type(visit)
+
+    end
+
+    private
+
+    def match_experience_to_visit_type(visit)
+    
+
+    end
+
 end

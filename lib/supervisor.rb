@@ -9,9 +9,14 @@ class Superviser < Worker
         super(args)
     end 
 
-    def assign_caseworker
+    def assign_caseworker(visit_type)
         @workers[0]
     end
+
+    private
+
+    #filter available times
+
     
 end
 
