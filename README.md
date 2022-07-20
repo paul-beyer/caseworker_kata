@@ -7,18 +7,18 @@ In this exercise, you will incrementally be building out a domain model that pro
 
 ### Feature: Create a Worker 
 As a worker I need to have a name and the start and end time of my day so that I can be assingned to visits. 
- - Can set and get name
- - Can set and get start time
- - Can set and get end time
+ - A worker has a name.
+ - A worker has a start time.
+ - A worker has an end time. 
 
 ### Feature: Create a supervisor
 As a supervisor I have a list of workers assinged to me.  
-- Can get and set a collection of workers on the supervisor. 
+- A supervisor can have a list of workers. 
 
 ### Feature: Create a visit
 Visits have a durations and start time. 
-- Can get and set a duration. 
-- Can get and set start time. 
+- A visit has a duration and a visit start time. 
+
 
 ### Feature: Supervisor can provide a list of users who can make a visit. 
 As a supervisor I can accept a visit and determine which workers are eligible to make that visit.
@@ -30,11 +30,11 @@ As a supervisor I can accept a visit and determine which workers are eligible to
 
 ### Feature: A worker can be assigned to a visit.
 As a visit, I must be able to have a worker assigned to me. 
-- A visit can get and set a worker. 
+- A visit can be assiged a worker.  
 
 ### Feature: A supervisor has visits to manage. 
 As a supervisor, I must be able to accept a list of visits so that I can assign workers to them
-- Can get and set a list of visits. 
+- A supervisor can accept a list of visits. 
 
 ### Feature: A supervisor can schedule a day's worth of visits. 
 As a supervisor with a list of visits for the day, I can assign workers to those visits. In today's world a worker can only do one visit a day.
@@ -50,19 +50,17 @@ As a supervisor with a list of visits for the day, I can assign workers to those
 ### Feature: Workers have experience levels
 As a worker I have an experience level that I've achieved. 
  - Experience levels are `junior`, `mid`, `senior`
- - Can get and set experience levels
+ - Experience levels are assigned to workers
  
 ### Feature: Visits vary by type, urgency, and duration
 As a visit, I have different types, urgencies, and durations. My durations are determined by type. 
- - A visit can be `check-in`, `abuse-investigation`, or `intervention`
- - Can get and set type
- - A visit can be `urgent`
- - Can get and set urgency
+ - A visit can be one of three types, `check-in`, `abuse-investigation`, or `intervention`
+ - A visit is assigned a type
  - Duration for `check-in` is `45 minutes`
  - Duration for `abuse-investigation` is `2 hours`
  - Duration for `intervention` is `3 hours`
  - Add `check-in` as default duration during visit creation
- - Set duration based on type
+ - Duration is assigned based on type
  
 ### Feature: Worker experience requirements
 As a Supervisor, I require a worker with an appropriate level of experience. 
@@ -71,6 +69,14 @@ As a Supervisor, I require a worker with an appropriate level of experience.
  - A senior worker can do check-ins, abuse-investigations, and interventions
  - Prefer the lowest skill level available when assigning to a visit
  - Schedule workers to visit based on experience level in addition to availability
+
+### Feature: An urgent visit ignores working hours
+As a Supervisor, when a visit is urgent, I only consider skill and availability, I do not consider working hours. 
+ - A visit can be `urgent`
+ - An urgency can be assigned to a visit
+ - Appropriate skill level is required based on visit type
+ - A worker cannot be assigned who is already on another visit at the same time
+ - A worker's working hours are ignored in urgent visits
 
 ## _Iteration 4 Bonus - Considering skill levels_
 
