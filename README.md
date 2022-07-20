@@ -6,7 +6,7 @@ This simulates the task of supervisors assigning workers to varying client visit
 
 As a supervisor
     In order to assign workers to client visits
-        I need to know which case workers are available
+        I need to know which case workers fit the criteria to be assinged to a case
 
 ## __CaseWorker_
 
