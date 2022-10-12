@@ -1,6 +1,6 @@
 require 'worker'
 
-class Superviser < Worker
+class Supervisor < Worker
 
     attr_accessor :workers
 
@@ -9,7 +9,7 @@ class Superviser < Worker
         super(args)
     end 
 
-    def assign_caseworker(visit_type)
+    def assign_worker()
         @workers[0]
     end
 
