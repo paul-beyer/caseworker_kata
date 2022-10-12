@@ -9,9 +9,10 @@ class Supervisor < Worker
         super(args)
     end 
 
-    def assign_worker()
-        @workers[0]
+    def assign_workers(visit)
+        @workers
     end
+
 
     private
 
