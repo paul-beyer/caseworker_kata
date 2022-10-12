@@ -1,10 +1,9 @@
 class Visit
-    attr_accessor :urgency, :reason, :travel_time, :worker
+    attr_accessor :duration, :start_time
 
     def initialize(args)
-        @urgency = args[:urgency]
-        @reason = args[:reason]
-        @travel_time = args[:travel_time]
+        @duration = args[:duration]
+        @start_time = args[:start_time]
     end 
 
    

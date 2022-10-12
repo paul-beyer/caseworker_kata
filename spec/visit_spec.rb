@@ -1,15 +1,17 @@
 require 'visit'
 require 'caseworker'
 
-#class VisitTest < Minitest::Test
-#
-#    
-#    def test_assigning_worker_to_visit 
-#        caseworker = CaseWorker.new(first_name: 'Jill')
-#        visit = Visit.new(urgency: 'high', reason: 'trouble', travel_time: 30)
-#        visit.worker = caseworker
-#        puts visit.worker.first_name == 'Jill'
-#    end
-#
-#    
-#end
+RSpec.describe Visit do
+
+    before do
+        @visit =  Visit.new(duration: 1, start_time: 5)
+    end 
+  
+    describe "visit attributes" do
+  
+      it "visit has attributes" do
+        expect(@visit).to have_attributes(duration: 1, start_time: 5)
+      end
+  
+    end
+  end
