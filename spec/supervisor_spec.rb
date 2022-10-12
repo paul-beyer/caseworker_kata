@@ -23,11 +23,13 @@ RSpec.describe Supervisor do
     end
   end
 
-  describe "#assign_workers" do 
+  describe "#eligible_workers" do 
 
-    it "can accept a visit and return a list of workers" do 
-      expect(@supervisor.assign_workers(@visit).length).to be > 0
+    it "can return workers who are working when visit starts" do 
+      eligible_workers = @supervisor.eligible_workers(@visit)
+      expect(eligible_workers.length).to be == 1
     end
+
   end
 end
 

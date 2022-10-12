@@ -9,16 +9,14 @@ class Supervisor < Worker
         super(args)
     end 
 
-    def assign_workers(visit)
-        @workers
+    def eligible_workers(visit)
+        eligible_workers = []
+        @workers.each do |worker|
+            if worker.shift_end <= visit.start_time
+              eligible_workers << worker
+            end
+        end
+       eligible_workers
     end
-
-
-    private
-
-    #filter available times
-
-    
 end
-
 
