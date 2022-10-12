@@ -12,11 +12,10 @@ class Supervisor < Worker
     def eligible_workers(visit)
         eligible_workers = []
         @workers.each do |worker|
-            if worker.shift_end <= visit.start_time
-              eligible_workers << worker
+            if visit.end_time <= worker.shift_end
+                eligible_workers << worker
             end
         end
        eligible_workers
     end
 end
-
