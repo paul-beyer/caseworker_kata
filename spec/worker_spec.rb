@@ -1,14 +1,15 @@
 require 'worker'
 
+RSpec.describe Worker do
 
-#class SupervisorTest < Minitest::Test
-#
-#    def test_supervisor_can_assign_worker 
-#        caseworkers = [CaseWorker.new(shift_start: 9, shift_end: 5, experience: 'junior')]
-#        supervisor = Superviser.new(shift_start: 8, shift_end: 5, workers: caseworkers)
-#        caseworker = supervisor.assign_caseworker
-#        assert caseworker != nil
-#    end 
-#
-#    
-#end
+    before do
+        @worker = Worker.new(shift_start: 9, shift_end: 5, first_name: 'Yankee', last_name: 'Doodle')
+    end 
+
+    describe "worker" do
+  
+      it "worker has attributes" do
+        expect(@worker).to have_attributes(first_name: 'Yankee', last_name: 'Doodle', shift_start: 9, shift_end: 5)
+      end
+    end
+end
