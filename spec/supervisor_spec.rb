@@ -25,10 +25,26 @@ RSpec.describe Supervisor do
 
   describe "#eligible_workers" do 
 
-    it "can return workers whose shift is within the visit time frame " do 
+    it "can return workers whose shift is within the visit time frame" do 
       eligible_workers = @supervisor.eligible_workers(@visit)
       expect(eligible_workers.length).to be == 2
     end
+
+    it "will return no workers if visits do not fall within work hours" do
+      visit = Visit.new(duration_minutes: 120, start_time: Time.new(2022, 10, 10, 18, 0, 0, "-04:00"))
+      expect(@supervisor.eligible_workers(visit).length).to be == 0
+    end
+
+    it "will not return workers if shift hasn't started by the visit start time" do
+      visit = Visit.new(duration_minutes: 120, start_time: Time.new(2022, 10, 10, 8, 0, 0, "-04:00"))
+      expect(@supervisor.eligible_workers(visit).length).to be == 0
+    end
+
+    it "will return all workers whose shift starts when the visit starts" do
+      visit = Visit.new(duration_minutes: 120, start_time: Time.new(2022, 10, 10, 9, 0, 0, "-04:00"))
+      expect(@supervisor.eligible_workers(visit).length).to be == 3
+    end
+
 
   end
 end
